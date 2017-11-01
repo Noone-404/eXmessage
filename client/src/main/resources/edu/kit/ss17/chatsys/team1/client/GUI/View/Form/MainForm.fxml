@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+    <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <top>
+            <MenuBar BorderPane.alignment="CENTER">
+                <Menu text="%menu_program">
+                    <Menu fx:id="menuLanguage" text="%menu_language" />
+                    <MenuItem onAction="#menuInfoAction" text="%menu_info" />
+                    <SeparatorMenuItem />
+                    <MenuItem onAction="#menuClose" text="%menu_exit" />
+                </Menu>
+                <!--<Menu text="%menu_view">
+                    <CheckMenuItem selected="true" text="%menu_offlinecontacts"/>
+                    <CheckMenuItem text="%menu_hidenames"/>
+                </Menu>-->
+                <Menu fx:id="menuConnection" text="%menu_connection">
+                    <MenuItem onAction="#menuConnectionStatus" text="%menu_connectionstatus" />
+                    <SeparatorMenuItem />
+                    <MenuItem fx:id="menuAddAccountItem" onAction="#menuAddAccount" text="%menu_acc_create" />
+                </Menu>
+                <Menu fx:id="menuPlugins" text="%menu_plugins">
+                    <MenuItem onAction="#menuPluginManager" text="%menu_pluginmanager" />
+                </Menu>
+            </MenuBar>
+        </top>
+        <opaqueInsets>
+            <Insets />
+        </opaqueInsets>
+        <center>
+            <SplitPane fx:id="mainContainer" disable="true" dividerPositions="0.3" style="-fx-padding: 0; -fx-box-border: transparent;" BorderPane.alignment="CENTER">
+                <items>
+                    <VBox minWidth="150.0" spacing="6.0" style="-fx-border-color: #c8c8c8; -fx-border-width: 0 1px 0 0;">
+                        <children>
+                            <Label fx:id="lblOwnJid" text="%default_own_jid">
+                                <font>
+                                    <Font size="18.0" />
+                                </font>
+                                <padding>
+                                    <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                </padding>
+                                <VBox.margin>
+                                    <Insets />
+                                </VBox.margin>
+                            </Label>
+                            <HBox alignment="BASELINE_LEFT" fillHeight="false" spacing="3.0" VBox.vgrow="NEVER">
+                                <children>
+                                    <Label text="%change_status" HBox.hgrow="NEVER">
+                                        <padding>
+                                            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                        </padding>
+                                    </Label>
+                                    <ComboBox fx:id="ownStatus" maxWidth="1.7976931348623157E308" onAction="#ownStatusChanged" HBox.hgrow="ALWAYS" />
+                                </children>
+                            </HBox>
+                            <ListView fx:id="contactListBox" style="-fx-border-color: #c8c8c8;" VBox.vgrow="ALWAYS">
+                                <placeholder>
+                                    <Label text="%roster_empty" />
+                                </placeholder>
+                                <opaqueInsets>
+                                    <Insets />
+                                </opaqueInsets>
+                            </ListView>
+                            <Button maxWidth="1.7976931348623157E308" onAction="#addContact" text="%roster_add_contact" />
+                        </children>
+                        <padding>
+                            <Insets bottom="6.0" left="6.0" right="6.0" top="3.0" />
+                        </padding>
+                    </VBox>
+                    <VBox fx:id="chatArea" disable="true" minWidth="200.0" spacing="6.0" style="-fx-border-color: #c8c8c8; -fx-border-width: 0 0 0 1px;">
+                        <children>
+                            <HBox alignment="BASELINE_LEFT" VBox.vgrow="NEVER" fx:id="othersInformation">
+                                <children>
+                                    <Label fx:id="lblAlias" visible="false">
+                                        <font>
+                                            <Font size="18.0" />
+                                        </font>
+                                        <padding>
+                                            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                        </padding>
+                                        <HBox.margin>
+                                            <Insets right="3.0" />
+                                        </HBox.margin>
+                                    </Label>
+                                    <Label fx:id="lblOthersJid" text="%default_others_jid">
+                                        <font>
+                                            <Font size="16.0" />
+                                        </font>
+                                        <padding>
+                                            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                        </padding>
+                                        <HBox.margin>
+                                            <Insets />
+                                        </HBox.margin>
+                                    </Label>
+                                </children>
+                                <VBox.margin>
+                                    <Insets left="3.0" />
+                                </VBox.margin>
+                            </HBox>
+                            <Label fx:id="lblOthersState" text="%default_others_state">
+                                <padding>
+                                    <Insets left="3.0" right="3.0" />
+                                </padding>
+                                <font>
+                                    <Font size="16.0" />
+                                </font>
+                                <VBox.margin>
+                                    <Insets left="3.0" />
+                                </VBox.margin>
+                            </Label>
+                            <SplitPane dividerPositions="0.85" orientation="VERTICAL" style="-fx-box-border: transparent; -fx-padding: 0;" VBox.vgrow="ALWAYS">
+                                <items>
+                                    <AnchorPane minHeight="100.0" style="-fx-border-width: 0px 0px 1px 0px; -fx-border-color: #c8c8c8;">
+                                        <children>
+                                            <ScrollPane fx:id="conversationScrollPane" fitToWidth="true" style="-fx-border-width: 1px 1px 0 1px; -fx-border-color: #c8c8c8; -fx-padding: 0; -fx-focus-color: transparent; -fx-faint-focus-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="0.0">
+                                                <VBox fx:id="conversationPane" spacing="5" stylesheets="@messages.css">
+                                                    <padding>
+                                                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                                                    </padding>
+                                                </VBox>
+                                                <padding>
+                                                    <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                                                </padding>
+                                            </ScrollPane>
+                                        </children>
+                                    </AnchorPane>
+                                    <HBox alignment="BOTTOM_LEFT" minHeight="60.0" style="-fx-border-width: 1px 0 0 0; -fx-border-color: #c8c8c8;">
+                                        <children>
+                                            <AnchorPane fx:id="enterChatMessagePane" maxWidth="1.7976931348623157E308" prefHeight="80.0" style="-fx-border-color: #c8c8c8; -fx-border-width: 0 1px 1px 1px;" HBox.hgrow="ALWAYS">
+                                                <HBox.margin>
+                                                    <Insets right="3.0" />
+                                                </HBox.margin>
+                                            </AnchorPane>
+                                            <Button fx:id="btSend" contentDisplay="GRAPHIC_ONLY" disable="true" mnemonicParsing="false" onAction="#btSend" prefHeight="40.0" prefWidth="40.0" style="-fx-background-image: url('/edu/kit/ss17/chatsys/team1/client/GUI/View/Form/send.png'); -fx-background-size:32 32;-fx-background-position: center;-fx-background-repeat: no-repeat;">
+                                                <HBox.margin>
+                                                    <Insets left="3.0" />
+                                                </HBox.margin>
+                                            </Button>
+                                        </children>
+                                        <padding>
+                                            <Insets bottom="6.0" left="6.0" right="6.0" />
+                                        </padding>
+                                    </HBox>
+                                </items>
+                            </SplitPane>
+                        </children>
+                        <padding>
+                            <Insets top="3.0" />
+                        </padding>
+                    </VBox>
+                </items>
+            </SplitPane>
+        </center>
+    </BorderPane>
+</AnchorPane>

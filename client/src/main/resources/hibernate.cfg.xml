@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">org.h2.Driver</property>
+        <property name="connection.url">jdbc:h2:./data/eXmessage</property>
+
+        <!-- JDBC connection pool -->
+        <property name="connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property>
+        <property name="hibernate.c3p0.acquire_increment">1</property>
+        <property name="hibernate.c3p0.idle_test_period">60</property>
+        <property name="hibernate.c3p0.min_size">1</property>
+        <property name="hibernate.c3p0.max_size">2</property>
+        <property name="hibernate.c3p0.max_statements">50</property>
+        <property name="hibernate.c3p0.timeout">0</property>
+        <property name="hibernate.c3p0.acquireRetryAttempts">1</property>
+        <property name="hibernate.c3p0.acquireRetryDelay">250</property>
+
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">edu.kit.ss17.chatsys.team1.shared.Storage.ImprovedH2Dialect</property>
+
+        <!-- Enable Hibernate's current session context -->
+        <property name="current_session_context_class">managed</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <!--<property name="show_sql">true</property>-->
+        <!--<property name="format_sql">true</property>-->
+
+        <!-- Mappings -->
+
+        <mapping class="edu.kit.ss17.chatsys.team1.client.Model.Roster"/>
+        <mapping class="edu.kit.ss17.chatsys.team1.client.Model.Contact"/>
+        <mapping class="edu.kit.ss17.chatsys.team1.shared.Roster.RosterInterface"/>
+        <mapping class="edu.kit.ss17.chatsys.team1.shared.Roster.ContactInterface"/>
+        <mapping class="edu.kit.ss17.chatsys.team1.shared.Util.Account.Account"/>
+        <mapping class="edu.kit.ss17.chatsys.team1.shared.Util.Account.AccountConfiguration"/>
+
+        <mapping resource="PluginSet.hbm.xml"/>
+        <mapping resource="Variable.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

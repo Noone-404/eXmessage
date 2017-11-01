@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="client" />
+        <module name="DebugLoggerPluginClient" />
+        <module name="DebugLoggerPluginServer" />
+        <module name="DebugLoggerPluginShared" />
+        <module name="server" />
+        <module name="shared" />
+        <module name="TCPConnectionPlugin" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="client" target="1.8" />
+      <module name="DebugLoggerPlugin" target="1.5" />
+      <module name="DebugLoggerPluginClient" target="1.8" />
+      <module name="DebugLoggerPluginServer" target="1.8" />
+      <module name="DebugLoggerPluginShared" target="1.8" />
+      <module name="eXmessage" target="1.5" />
+      <module name="server" target="1.8" />
+      <module name="shared" target="1.8" />
+      <module name="TCPConnectionPlugin" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

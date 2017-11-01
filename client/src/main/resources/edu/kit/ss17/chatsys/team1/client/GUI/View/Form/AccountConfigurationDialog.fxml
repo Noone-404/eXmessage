@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.111">
+    <padding>
+        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0"/>
+    </padding>
+    <VBox spacing="3.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <children>
+            <TitledPane collapsible="false" text="%acc_server">
+                <content>
+                    <GridPane hgap="3.0" vgap="3.0">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES"/>
+                            <ColumnConstraints hgrow="ALWAYS"/>
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                        </rowConstraints>
+                        <children>
+                            <Label text="%acc_address">
+                                <GridPane.margin>
+                                    <Insets bottom="3.0" left="3.0" right="3.0" top="3.0"/>
+                                </GridPane.margin>
+                            </Label>
+                            <Label text="%acc_port" GridPane.rowIndex="1">
+                                <GridPane.margin>
+                                    <Insets bottom="3.0" left="3.0" right="3.0" top="3.0"/>
+                                </GridPane.margin>
+                            </Label>
+                            <Label text="%acc_protocol" GridPane.rowIndex="2">
+                                <GridPane.margin>
+                                    <Insets bottom="3.0" left="3.0" right="3.0" top="3.0"/>
+                                </GridPane.margin>
+                            </Label>
+                            <TextField GridPane.columnIndex="1" fx:id="tbAddress">
+                                <GridPane.margin>
+                                    <Insets bottom="3.0" left="3.0" right="3.0" top="3.0"/>
+                                </GridPane.margin>
+                            </TextField>
+                            <Spinner editable="true" prefWidth="120.0" GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="isPort">
+                                <valueFactory>
+                                    <SpinnerValueFactory.IntegerSpinnerValueFactory min="1" max="65535" initialValue="$DEFAULT_PORT" amountToStepBy="1"/>
+                                </valueFactory>
+                                <GridPane.margin>
+                                    <Insets bottom="3.0" left="3.0" right="3.0" top="3.0"/>
+                                </GridPane.margin>
+                            </Spinner>
+                            <ComboBox prefWidth="120.0" GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="cbProtocol">
+                                <GridPane.margin>
+                                    <Insets bottom="3.0" left="3.0" right="3.0" top="3.0"/>
+                                </GridPane.margin>
+                            </ComboBox>
+                        </children>
+                    </GridPane>
+                </content>
+            </TitledPane>
+            <TitledPane collapsible="false" text="%acc_account">
+                <content>
+                    <GridPane hgap="3.0" vgap="3.0">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES"/>
+                            <ColumnConstraints hgrow="ALWAYS"/>
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                            <RowConstraints vgrow="SOMETIMES"/>
+                        </rowConstraints>
+                        <children>
+                            <!--<CheckBox text="%acc_register" GridPane.columnSpan="2"/>-->
+                            <Label text="%acc_jid" GridPane.rowIndex="1">
+                                <GridPane.margin>
+                                    <Insets bottom="3.0" left="3.0" right="3.0" top="3.0"/>
+                                </GridPane.margin>
+                            </Label>
+                            <Label text="%acc_password" GridPane.rowIndex="2">
+                                <GridPane.margin>
+                                    <Insets bottom="3.0" left="3.0" right="3.0" top="3.0"/>
+                                </GridPane.margin>
+                            </Label>
+                            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="tbJid">
+                                <GridPane.margin>
+                                    <Insets bottom="3.0" left="3.0" right="3.0" top="3.0"/>
+                                </GridPane.margin>
+                            </TextField>
+                            <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="tbPassword">
+                                <GridPane.margin>
+                                    <Insets bottom="3.0" left="3.0" right="3.0" top="3.0"/>
+                                </GridPane.margin>
+                            </PasswordField>
+                        </children>
+                    </GridPane>
+                </content>
+            </TitledPane>
+            <Pane VBox.vgrow="ALWAYS"/>
+            <ButtonBar>
+                <buttons>
+                    <Button onAction="#btCancel" text="%acc_cancel" ButtonBar.buttonData="CANCEL_CLOSE"/>
+                    <Button onAction="#btSave" fx:id="btSave" text="%acc_save" ButtonBar.buttonData="OK_DONE"/>
+                </buttons>
+            </ButtonBar>
+        </children>
+        <padding>
+            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0"/>
+        </padding>
+    </VBox>
+</AnchorPane>

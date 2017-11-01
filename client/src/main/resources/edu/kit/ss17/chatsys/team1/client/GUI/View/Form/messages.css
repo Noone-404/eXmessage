@@ -1,0 +1,12 @@
+.message {
+    -fx-border-radius: 5px;
+    -fx-border-style: solid;
+    -fx-padding: 3px;
+    -fx-border-color: #00000030;
+}
+
+.timeText {
+    -fx-padding: 3px 3px 2px 3px;
+    -fx-font-style: italic;
+    -fx-font-size: 0.9em;
+}

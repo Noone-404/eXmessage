@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+<GridPane xmlns:fx="http://javafx.com/fxml/1" fx:id="mainContainer" alignment="CENTER_LEFT" hgap="5" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+          minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.111">
+    <columnConstraints>
+        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES"/>
+        <ColumnConstraints/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints vgrow="SOMETIMES"/>
+        <RowConstraints vgrow="SOMETIMES"/>
+    </rowConstraints>
+    <Label fx:id="contactAlias" maxWidth="1.7976931348623157E308" style="-fx-background-color: transparent;" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS"/>
+    <Label fx:id="contactJid" maxWidth="1.7976931348623157E308" style="-fx-background-color: transparent;" textFill="GREY" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS"
+           GridPane.rowIndex="1"/>
+    <Pane fx:id="circlePanel" style="-fx-background-color: transparent;" GridPane.rowSpan="2">
+        <Circle fx:id="circle" fill="TRANSPARENT" layoutX="6.0" layoutY="10.0" radius="10.0"/>
+    </Pane>
+</GridPane>

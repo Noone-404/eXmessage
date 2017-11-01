@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="StreamProcessor" pattern="src[shared]:edu.kit.ss17.chatsys.team1.shared.StreamProcessor..*" />
+</component>

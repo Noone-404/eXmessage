@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/DebugLoggerPlugin/DebugLoggerPlugin.iml" filepath="$PROJECT_DIR$/DebugLoggerPlugin/DebugLoggerPlugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DebugLoggerPlugin/client/DebugLoggerPluginClient.iml" filepath="$PROJECT_DIR$/DebugLoggerPlugin/client/DebugLoggerPluginClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DebugLoggerPlugin/server/DebugLoggerPluginServer.iml" filepath="$PROJECT_DIR$/DebugLoggerPlugin/server/DebugLoggerPluginServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DebugLoggerPlugin/shared/DebugLoggerPluginShared.iml" filepath="$PROJECT_DIR$/DebugLoggerPlugin/shared/DebugLoggerPluginShared.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TCPConnectionPlugin/TCPConnectionPlugin.iml" filepath="$PROJECT_DIR$/TCPConnectionPlugin/TCPConnectionPlugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/client/client.iml" filepath="$PROJECT_DIR$/client/client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eXmessage.iml" filepath="$PROJECT_DIR$/eXmessage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/server/server.iml" filepath="$PROJECT_DIR$/server/server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shared/shared.iml" filepath="$PROJECT_DIR$/shared/shared.iml" />
+    </modules>
+  </component>
+</project>
